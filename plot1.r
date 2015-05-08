@@ -1,0 +1,6 @@
+df <- read.csv("C:/RStudio/expl_data/household_power_consumption.txt", sep=";", stringsAsFactors=FALSE)
+sub <- subset(df,df$Date == "1/2/2007" | df$Date == "2/2/2007"  )
+hist(as.numeric(sub$Global_active_power),main="Global Active Power",xlab = "Global Active Power (kilowatts)" , xlim = c(0,6), freq = TRUE, col = "red", xaxt = "n") 
+axis(side = 1, at=seq(from = 0, 6, by = 2) )
+dev.copy(png,"plot1.png")
+dev.off()
